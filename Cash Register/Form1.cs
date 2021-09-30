@@ -95,7 +95,7 @@ namespace Cash_Register
             recieptinput.Text += $"\n\nSubtotal: {subtotal} Red Orbs";
             Refresh();
             Thread.Sleep(50);
-            recieptinput.Text += $"\nTax: 13%";
+            recieptinput.Text += $"\n\nTax: 13%";
             Refresh();
             Thread.Sleep(50);
             recieptinput.Text += $"\n\nTax Amount: {taxtotal} Red Orbs";
