@@ -46,6 +46,7 @@ namespace Cash_Register
             this.tenderedinput = new System.Windows.Forms.TextBox();
             this.changebutton = new System.Windows.Forms.Label();
             this.changeinput = new System.Windows.Forms.Label();
+            this.neworder = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nico
@@ -62,9 +63,9 @@ namespace Cash_Register
             // 
             this.nicodialogue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.nicodialogue.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nicodialogue.Location = new System.Drawing.Point(669, 273);
+            this.nicodialogue.Location = new System.Drawing.Point(658, 273);
             this.nicodialogue.Name = "nicodialogue";
-            this.nicodialogue.Size = new System.Drawing.Size(244, 112);
+            this.nicodialogue.Size = new System.Drawing.Size(286, 113);
             this.nicodialogue.TabIndex = 1;
             this.nicodialogue.Text = "Nico: Welcome to Devil May Cry! Ignore the freaky statue for now... So, what\'re y" +
     "a buying?";
@@ -141,9 +142,9 @@ namespace Cash_Register
             // 
             this.recieptinput.BackColor = System.Drawing.Color.Transparent;
             this.recieptinput.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recieptinput.Location = new System.Drawing.Point(366, 9);
+            this.recieptinput.Location = new System.Drawing.Point(366, 42);
             this.recieptinput.Name = "recieptinput";
-            this.recieptinput.Size = new System.Drawing.Size(248, 446);
+            this.recieptinput.Size = new System.Drawing.Size(248, 413);
             this.recieptinput.TabIndex = 17;
             // 
             // redorbprice
@@ -161,7 +162,7 @@ namespace Cash_Register
             this.printreceipt.BackColor = System.Drawing.Color.Transparent;
             this.printreceipt.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.printreceipt.ForeColor = System.Drawing.Color.Black;
-            this.printreceipt.Location = new System.Drawing.Point(380, 464);
+            this.printreceipt.Location = new System.Drawing.Point(380, 486);
             this.printreceipt.Name = "printreceipt";
             this.printreceipt.Size = new System.Drawing.Size(234, 41);
             this.printreceipt.TabIndex = 19;
@@ -209,6 +210,18 @@ namespace Cash_Register
             this.changeinput.TabIndex = 23;
             this.changeinput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // neworder
+            // 
+            this.neworder.BackColor = System.Drawing.Color.Transparent;
+            this.neworder.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.neworder.ForeColor = System.Drawing.Color.Black;
+            this.neworder.Location = new System.Drawing.Point(364, 9);
+            this.neworder.Name = "neworder";
+            this.neworder.Size = new System.Drawing.Size(234, 33);
+            this.neworder.TabIndex = 24;
+            this.neworder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.neworder.Click += new System.EventHandler(this.neworder_Click);
+            // 
             // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +230,7 @@ namespace Cash_Register
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(956, 536);
+            this.Controls.Add(this.neworder);
             this.Controls.Add(this.changeinput);
             this.Controls.Add(this.changebutton);
             this.Controls.Add(this.tenderedinput);
@@ -259,6 +273,7 @@ namespace Cash_Register
         private System.Windows.Forms.TextBox tenderedinput;
         private System.Windows.Forms.Label changebutton;
         private System.Windows.Forms.Label changeinput;
+        private System.Windows.Forms.Label neworder;
     }
 }
 
