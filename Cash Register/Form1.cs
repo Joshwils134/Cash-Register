@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace Cash_Register
 {
@@ -73,66 +74,73 @@ namespace Cash_Register
 
         private void printreceipt_Click(object sender, EventArgs e)
         {
-            neworder.BackColor = Color.WhiteSmoke;
-            neworder.Text = $"New Order";
-            recieptinput.BackColor = Color.White;
-            nicodialogue.Text = $"Nico: Here's your reciept! Come again!";
-            recieptinput.Text = $"\nDevil May Cry";
-            Refresh();
-            Thread.Sleep(50);
-            recieptinput.Text += $"\nOrder Number:111\n---------------------------------------------";
-            Refresh();
-            Thread.Sleep(50);
-            recieptinput.Text += $"\nBlue Orb Fragment X {blueorb}     {totalblueorbprice} ";
-            Refresh();
-            Thread.Sleep(50);
-            recieptinput.Text += $"\nPurple Orb Fragment X {purpleorb}  {totalpurpleorbprice}";
-            Refresh();
-            Thread.Sleep(50);
-            recieptinput.Text += $"\nGold Orb                             X {goldorb}   {totalgoldorbprice} ";
-            Refresh();
-            Thread.Sleep(50);
-            recieptinput.Text += $"\n\nSubtotal: {subtotal} Red Orbs";
-            Refresh();
-            Thread.Sleep(50);
-            recieptinput.Text += $"\n\nTax: 13%";
-            Refresh();
-            Thread.Sleep(50);
-            recieptinput.Text += $"\n\nTax Amount: {taxtotal} Red Orbs";
-            Refresh();
-            Thread.Sleep(50);
-            recieptinput.Text += $"\n\nTotal:{totalredorb} Red Orbs";
-            Refresh();
-            Thread.Sleep(50);
-            recieptinput.Text += $"\n\nTendered:{tendered} Red Orbs";
-            Refresh();
-            Thread.Sleep(50);
-            recieptinput.Text += $"\n\nChange:{change} Red Orbs";
-            Refresh();
-            Thread.Sleep(50);
-            recieptinput.Text += $"\n\n\nThanks for shopping at Devil May Cry! Our arsenal make the angels scream and the devil cry!";
+                SoundPlayer player = new SoundPlayer(Properties.Resources.receiptprint);
+                player.Play();
+                neworder.BackColor = Color.WhiteSmoke;
+                neworder.Text = $"New Order";
+                recieptinput.BackColor = Color.White;
+                nicodialogue.Text = $"Nico: Here's your reciept! Come again!";
+                recieptinput.Text = $"\nDevil May Cry";
+                Refresh();
+                Thread.Sleep(150);
+                recieptinput.Text += $"\nOrder Number:111\n---------------------------------------------";
+                Refresh();
+                Thread.Sleep(150);
+                recieptinput.Text += $"\nBlue Orb Fragment      X {blueorb}   {totalblueorbprice} ";
+                Refresh();
+                Thread.Sleep(150);
+                recieptinput.Text += $"\nPurple Orb Fragment X {purpleorb}   {totalpurpleorbprice}";
+                Refresh();
+                Thread.Sleep(150);
+                recieptinput.Text += $"\nGold Orb                             X {goldorb}   {totalgoldorbprice} ";
+                Refresh();
+                Thread.Sleep(150);
+                recieptinput.Text += $"\n\nSubtotal: {subtotal} Red Orbs";
+                Refresh();
+                Thread.Sleep(150);
+                recieptinput.Text += $"\n\nTax: 13%";
+                Refresh();
+                Thread.Sleep(150);
+                recieptinput.Text += $"\n\nTax Amount: {taxtotal} Red Orbs";
+                Refresh();
+                Thread.Sleep(150);
+                recieptinput.Text += $"\n\nTotal:{totalredorb} Red Orbs";
+                Refresh();
+                Thread.Sleep(150);
+                recieptinput.Text += $"\n\nTendered:{tendered} Red Orbs";
+                Refresh();
+                Thread.Sleep(150);
+                recieptinput.Text += $"\n\nChange:{change.ToString("0.00")} Red Orbs";
+                Refresh();
+                Thread.Sleep(150);
+                recieptinput.Text += $"\n\nThanks for shopping at Devil May Cry! Our arsenal make the Angels scream and the Devil cry!";
         }
 
         private void changebutton_Click(object sender, EventArgs e)
         {
-            blueorb = Convert.ToInt32(blueorbinput.Text);
-            purpleorb = Convert.ToInt32(purpleorbinput.Text);
-            goldorb = Convert.ToInt32(goldorbinput.Text);
-            totalblueorbprice = blueorb * blueorbprice;
-            totalpurpleorbprice = purpleorb * purpleorbprice;
-            totalgoldorbprice = goldorb * goldorbprice;
-            subtotal = totalblueorbprice + totalpurpleorbprice + totalgoldorbprice;
-            taxrate = 0.13;
-            taxamount = subtotal * +taxrate;
-            redorbs = subtotal;
-            totalredorb = subtotal * (1 + taxrate);
-            tendered = Convert.ToInt32(tenderedinput.Text);
-            nicodialogue.Text = $"Nico: Well aren't you a big spender? Alright, grab your receipt buddy.";
-            change = tendered - totalredorb;
-            changeinput.BackColor = Color.WhiteSmoke;
-            changeinput.Text = $"Change Due:{change} Red Orbs";
-            printreceipt.BackColor = Color.WhiteSmoke;
-            printreceipt.Text = "Print Receipt";
+            try
+            {
+                blueorb = Convert.ToInt32(blueorbinput.Text);
+                purpleorb = Convert.ToInt32(purpleorbinput.Text);
+                goldorb = Convert.ToInt32(goldorbinput.Text);
+                totalblueorbprice = blueorb * blueorbprice;
+                totalpurpleorbprice = purpleorb * purpleorbprice;
+                totalgoldorbprice = goldorb * goldorbprice;
+                subtotal = totalblueorbprice + totalpurpleorbprice + totalgoldorbprice;
+                taxrate = 0.13;
+                taxamount = subtotal * +taxrate;
+                redorbs = subtotal;
+                totalredorb = subtotal * (1 + taxrate);
+                tendered = Convert.ToInt32(tenderedinput.Text);
+                nicodialogue.Text = $"Nico: Well aren't you a big spender? Alright, grab your receipt buddy.";
+                change = tendered - totalredorb;
+                changeinput.BackColor = Color.WhiteSmoke;
+                changeinput.Text = $"Change Due:{change.ToString("0.00")}";
+                printreceipt.BackColor = Color.WhiteSmoke;
+                printreceipt.Text = "Print Receipt";
+            }
+        catch
+            { nicodialogue.Text = $"Nico: You ain't got red orbs? Then you ain't getting your stuff!"; }
         }
 
         private void tender_Click(object sender, EventArgs e)
@@ -143,9 +151,12 @@ namespace Cash_Register
 
         private void neworder_Click(object sender, EventArgs e)
         {
+            nicodialogue.Text = $"Nico: Take care! Don't die out there!";
+            Refresh();
+            Thread.Sleep(30);
             Application.Restart();
             Environment.Exit(0);
-            nicodialogue.Text = $"Take care! Don't die out there!";
+            
         }
     }
 }

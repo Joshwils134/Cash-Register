@@ -215,7 +215,7 @@ namespace Cash_Register
             this.neworder.BackColor = System.Drawing.Color.Transparent;
             this.neworder.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.neworder.ForeColor = System.Drawing.Color.Black;
-            this.neworder.Location = new System.Drawing.Point(364, 9);
+            this.neworder.Location = new System.Drawing.Point(380, 9);
             this.neworder.Name = "neworder";
             this.neworder.Size = new System.Drawing.Size(234, 33);
             this.neworder.TabIndex = 24;
@@ -249,7 +249,7 @@ namespace Cash_Register
             this.Controls.Add(this.nico);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "form1";
-            this.Text = "Form1";
+            this.Text = "Devil May Cry";
             this.ResumeLayout(false);
             this.PerformLayout();
 
