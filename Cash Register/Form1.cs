@@ -82,37 +82,37 @@ namespace Cash_Register
                 nicodialogue.Text = $"Nico: Here's your reciept! Come again!";
                 recieptinput.Text = $"\nDevil May Cry";
                 Refresh();
-                Thread.Sleep(150);
+                Thread.Sleep(200);
                 recieptinput.Text += $"\nOrder Number:111\n---------------------------------------------";
                 Refresh();
-                Thread.Sleep(150);
+                Thread.Sleep(200);
                 recieptinput.Text += $"\nBlue Orb Fragment      X {blueorb}   {totalblueorbprice} ";
                 Refresh();
-                Thread.Sleep(150);
+                Thread.Sleep(200);
                 recieptinput.Text += $"\nPurple Orb Fragment X {purpleorb}   {totalpurpleorbprice}";
                 Refresh();
-                Thread.Sleep(150);
+                Thread.Sleep(200);
                 recieptinput.Text += $"\nGold Orb                             X {goldorb}   {totalgoldorbprice} ";
                 Refresh();
-                Thread.Sleep(150);
+                Thread.Sleep(200);
                 recieptinput.Text += $"\n\nSubtotal: {subtotal} Red Orbs";
                 Refresh();
-                Thread.Sleep(150);
+                Thread.Sleep(200);
                 recieptinput.Text += $"\n\nTax: 13%";
                 Refresh();
-                Thread.Sleep(150);
+                Thread.Sleep(200);
                 recieptinput.Text += $"\n\nTax Amount: {taxtotal} Red Orbs";
                 Refresh();
-                Thread.Sleep(150);
+                Thread.Sleep(200);
                 recieptinput.Text += $"\n\nTotal:{totalredorb} Red Orbs";
                 Refresh();
-                Thread.Sleep(150);
+                Thread.Sleep(200);
                 recieptinput.Text += $"\n\nTendered:{tendered} Red Orbs";
                 Refresh();
-                Thread.Sleep(150);
+                Thread.Sleep(200);
                 recieptinput.Text += $"\n\nChange:{change.ToString("0.00")} Red Orbs";
                 Refresh();
-                Thread.Sleep(150);
+                Thread.Sleep(200);
                 recieptinput.Text += $"\n\nThanks for shopping at Devil May Cry! Our arsenal make the Angels scream and the Devil cry!";
         }
 
@@ -153,7 +153,7 @@ namespace Cash_Register
         {
             nicodialogue.Text = $"Nico: Take care! Don't die out there!";
             Refresh();
-            Thread.Sleep(30);
+            Thread.Sleep(300);
             Application.Restart();
             Environment.Exit(0);
             
