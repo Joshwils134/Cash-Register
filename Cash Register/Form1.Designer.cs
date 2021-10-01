@@ -215,9 +215,9 @@ namespace Cash_Register
             this.neworder.BackColor = System.Drawing.Color.Transparent;
             this.neworder.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.neworder.ForeColor = System.Drawing.Color.Black;
-            this.neworder.Location = new System.Drawing.Point(369, 9);
+            this.neworder.Location = new System.Drawing.Point(356, 9);
             this.neworder.Name = "neworder";
-            this.neworder.Size = new System.Drawing.Size(245, 33);
+            this.neworder.Size = new System.Drawing.Size(258, 33);
             this.neworder.TabIndex = 24;
             this.neworder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.neworder.Click += new System.EventHandler(this.neworder_Click);
